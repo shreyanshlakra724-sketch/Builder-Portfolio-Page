@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Builder_Page.V1</title>
+    <title>Portfolio</title>
 
 <style>
+
+
+    .cursor {
+        width: 15px;
+        height: 15px;
+        background-color: #3368A0;
+        border: 2px solid #F2EFE7;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        transition: transform 0.1s ease;
+
+    }
 
     .page {
         display: none;
@@ -20,6 +35,8 @@
         font-weight: bold;
         font-size: 17px;
         background-color: #F2EFE7;
+        flex-direction: column;
+        margin: 0;
         
     }
 
@@ -35,6 +52,9 @@
         display: flex;
         justify-content: center;
         list-style: none;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
 
      }
 
@@ -44,6 +64,24 @@
         display: block;
         border-radius: 7px;
         transition: background-color 0.3s ease;
+        position: relative;
+     }
+
+     .navbar a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e5fc91;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+     }
+
+     .navbar a.active::after{
+        transform: scaleX(1);
      }
 
      .navbar a:hover {
@@ -64,17 +102,11 @@
         padding: 0;
     }
 
-    li[name="home"], li[name="about"], li[name="contact"] {
-        display: inline-block;
-        margin-right: 20px;
-        block-size: 20px;
-        color: #e5fc91;
-    }
+    
 
     section.main {
         padding: 20px;
         background-color: #F2EFE7;
-        spacing: 0;
         margin: 0;
         line-height: 1.5;
     }
@@ -82,7 +114,7 @@
     section.about {
         padding: 20px;
         background-color: #F2EFE7;
-        spacing: 0;
+       
         margin: 0;
         line-height: 1.5;
     }
@@ -90,62 +122,131 @@
     section.contact {
         padding: 20px;
         background-color: #F2EFE7;
-        spacing: 0;
         margin: 0;
         line-height: 1.5;
     }
 
+    .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .project-link {
+    background-color: #C8DFDB;
+    color: #3368A0;
+    padding: 10px 17px;
+    border-radius: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    }
+
+    .project-link:hover {
+        background-color: #66A3BF;
+    }
+
+    #copy {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #C8DFDB;
+        color: #3368A0;
+        padding: 18px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
 
 
+    }
+
+    #copy:hover {
+        background-color: #66A3BF;
+        transform: scale(1.05);
+    }
+
+    .footer {
+        background-color: #3368A0;
+        color: #C8DFDB;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 8px 35px;
+
+    
+    }
+
+    .footer.main-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer a {
+        color: #C8DFDB;
+        text-decoration: none;
+    }
+
+    * {
+        cursor: none;
+    }
 
 
 </style>
 </head>
 <body>
+<div class ="cursor"></div>
 
     <header>
         <div class="header">
             <nav class = "navbar">
                 <ul>
-                    <li name="home" data-page="Home"><a href="">Home</a></li>
-                    <li name="about" data-page="About"><a href="">About</a></li>
-                    <li name="contact" data-page="Contact"><a href="">Contact</a></li>
+                    <li name="home" data-page="home"><a href="">Home</a></li>
+                    <li name="about" data-page="about"><a href="">About</a></li>
+                    <li name="contact" data-page="contact"><a href="">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class = 'main' id="main">
-    <h1>Sup, Welcome to my builder page !</h1>
 
-    <p>I'm Shreyansh, a high school student from Delhi. I like making cool projects and learning about maths !</p>
-    </section>
 
     <section class = " page home" id="home">
     <div class = "projects">
+    <h1>Sup, Welcome to my builder page !</h1>
+
+    <p>I'm Shreyansh, a high school student from Delhi. I like making cool projects and learning about maths !</p>   
+
     <h2>My Projects</h2>
-    <ul>
-        <div class = "V1-Initiative">
-            <li name="V1 Initiative"><a href="https://www.v1initiative.org/">V1 Initiative</a></li>
+
+
+        <div class = "project-list">
+
+          <div class = project-card>
+            <h3 name="V1 Initiative"><a href="https://www.v1initiative.org/" class = "project-link">V1 Initiative</a></h3>
             <p>V1 Initiatve is a non-profit organizaiton which aims to provide students in STEM with the right resources and opportunities.,
                 in the past we have hosted an online hackathon and looking forward to hosting more events in the future for students.
             </p>
-        </div>
-        
-        <div class = "Nyanify">
-            <li name="Nyanify"><a href="https://github.com/shreyanshlakra724-sketch/bookmarklet">Nyanify</a></li>
-            <p>Nyanify is a javascript bookmarklet which Nyanify's your webpage</p>
-        </div>
+            </div>
+            
 
-        <div class = "SCP-Last-Response">
-            <li name="SCP-Last Response"><a href="https://github.com/Swift221/SCP-Last-Response">SCP-Last Response</a></li>
+        
+        
+            <div class = project-card>
+            <h3 name="Nyanify"><a href="https://github.com/shreyanshlakra724-sketch/bookmarklet" class = "project-link">Nyanify</a></h3>
+            <p>Nyanify is a javascript bookmarklet which Nyanify's your webpage</p>
+            </div>
+        
+
+        <div class = project-card>
+            <h3 name="SCP-Last Response"><a href="https://github.com/Swift221/SCP-Last-Response" class = "project-link">SCP-Last Response</a></h3>
             <p>SCP-Last Response is a SCP themed 2d-game which I am currently working on. </p>
         </div>
+         </div>
 
 
         </div>
 
-    </ul>
 
     </div>
 </section>
@@ -156,25 +257,38 @@
 
         <section class = " page about" id="about">
         <h2>About Me</h2>
-        <p>I'm a high school student from Delhi, India. I like making cool projects and learning about maths !</p>
+        <p>I'm a high school student from Delhi, India. I like making cool projects and learning about maths ! Currently I am in 11th Grade, leading V1 Initiatve a STEM non-profit to provide high school students with 
+            the right resources and opportunites.I am also currently part of Hack Club, making and shipping projects.I am always open to new projects, feel free to reach out to me from the contact section.
+        </p>
 
         </section>
 
 
         <section class = "page contact" id="contact">
         <h2>Contact Me</h2>
-        <p>You can contact me via email at <a href="mailto:shreyanshlakra724@gmail.com">shreyanshlakra724@gmail.com</a></p>
-        <p>or</p>
-        <a href = "mailto:info@shreyanshlakra.com">Email Me</a>
+        <p>You can contact me via email at <a href="mailto:shreyanshlakra724@gmail.com">shreyanshlakra724@gmail.com</a> or <a href = "mailto:contact@shreyanshlakra.com">contact@shreyanshlakra.com</a>
+
+        </p>
+        <button id="copy">Copy</button>
+
         <h3>Other Links</h3>
         <ul>
-            <li name="github"><a href="#">GitHub</a></li>
-            <li name="Discord"><a href="#">Discord</a></li>
+            <li name="github"><a href="https://github.com/shreyanshlakra724-sketch">GitHub</a></li>
+            <li name="Discord">Discord:vixper1</a></li>
         </ul>
         </section>
 
+<footer class = "footer">
+    <div class = "main-footer">
+        <p>2026</p>
+        <a href = "https://github.com/shreyanshlakra724-sketch/Builder-Portfolio-Page">
+            <img src="logo_github.png" alt="GitHub Logo" width="30" height="30">
+        </a>
 
-    
+    </div>
+
+
+</footer>    
 <script src="script.js"></script>
 </body>
 </html>
