@@ -7,19 +7,54 @@
 
 <style>
 
+    .page {
+        display: none;
+    }
+
+    #home {
+        display: block;
+    }
+
     body {
-        font-famly: open-sans, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-weight: bold;
-        font-size: 28px;
-        margin: 0;
-        spacing: 0;
+        font-size: 17px;
+        background-color: #F2EFE7;
         
     }
+
+     .navbar {
+        background-color: #3368A0;
+        border-radius: 15px;
+        margin: 10px 15px;
+        overflow: hidden;
+
+     }
+
+     .navbar ul{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+
+     }
+
+     .navbar a{
+        color: #66A3BF;
+        text-decoration: none;
+        display: block;
+        border-radius: 7px;
+        transition: background-color 0.3s ease;
+     }
+
+     .navbar a:hover {
+        color: #e5fc91;
+     }
 
     
      .header {
         background-color: #3368A0;
-
+        border-radius: 15px;
+        margin: 10px 15px;
         padding: 10px 15px;
     }
 
@@ -36,6 +71,32 @@
         color: #e5fc91;
     }
 
+    section.main {
+        padding: 20px;
+        background-color: #F2EFE7;
+        spacing: 0;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    section.about {
+        padding: 20px;
+        background-color: #F2EFE7;
+        spacing: 0;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    section.contact {
+        padding: 20px;
+        background-color: #F2EFE7;
+        spacing: 0;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+
+
 
 
 </style>
@@ -44,11 +105,11 @@
 
     <header>
         <div class="header">
-            <nav>
+            <nav class = "navbar">
                 <ul>
-                    <li name="home"><a href="#">Home</a></li>
-                    <li name="about"><a href="#">About</a></li>
-                    <li name="contact"><a href="#">Contact</a></li>
+                    <li name="home" data-page="Home"><a href="">Home</a></li>
+                    <li name="about" data-page="About"><a href="">About</a></li>
+                    <li name="contact" data-page="Contact"><a href="">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -58,12 +119,13 @@
     <h1>Sup, Welcome to my builder page !</h1>
 
     <p>I'm Shreyansh, a high school student from Delhi. I like making cool projects and learning about maths !</p>
+    </section>
 
-
+    <section class = " page home" id="home">
     <div class = "projects">
     <h2>My Projects</h2>
     <ul>
-        <div class = "V1 Initiative">
+        <div class = "V1-Initiative">
             <li name="V1 Initiative"><a href="https://www.v1initiative.org/">V1 Initiative</a></li>
             <p>V1 Initiatve is a non-profit organizaiton which aims to provide students in STEM with the right resources and opportunities.,
                 in the past we have hosted an online hackathon and looking forward to hosting more events in the future for students.
@@ -75,7 +137,7 @@
             <p>Nyanify is a javascript bookmarklet which Nyanify's your webpage</p>
         </div>
 
-        <div class = "SCP-Last Response">
+        <div class = "SCP-Last-Response">
             <li name="SCP-Last Response"><a href="https://github.com/Swift221/SCP-Last-Response">SCP-Last Response</a></li>
             <p>SCP-Last Response is a SCP themed 2d-game which I am currently working on. </p>
         </div>
@@ -86,15 +148,20 @@
     </ul>
 
     </div>
+</section>
 
-    </section>
 
 
-    <section class = "about" id="about">
+
+
+        <section class = " page about" id="about">
         <h2>About Me</h2>
         <p>I'm a high school student from Delhi, India. I like making cool projects and learning about maths !</p>
 
-        <section class = "contact" id="contact">
+        </section>
+
+
+        <section class = "page contact" id="contact">
         <h2>Contact Me</h2>
         <p>You can contact me via email at <a href="mailto:shreyanshlakra724@gmail.com">shreyanshlakra724@gmail.com</a></p>
         <p>or</p>
@@ -104,9 +171,10 @@
             <li name="github"><a href="#">GitHub</a></li>
             <li name="Discord"><a href="#">Discord</a></li>
         </ul>
-    </section>
+        </section>
 
 
-
+    
+<script src="script.js"></script>
 </body>
 </html>
