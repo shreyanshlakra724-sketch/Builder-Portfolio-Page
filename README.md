@@ -18,4 +18,4 @@ I have implemented features such as a custom cursor, animations on navbar, copy 
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-- I was facing some issues while linking the dns of the domain and netlify but after some time I was able to fix it after correctly creating the records and stuff.
+- I was facing some issues while linking the dns of the domain and netlify but after some time I was able to fix it after correctly creating the records and stuff. With this project I was also able to learn new features and stuff about JavaScript and css integration.
