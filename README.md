@@ -13,7 +13,7 @@ I have made this website using Vanilla Web Stack that is HTML,CSS and Javascript
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-#Features
+# Features
 I have implemented features such as a custom cursor, animations on navbar, copy email address, and a link to this GitHub repo in the footer, I have also hosted this website using netlify and on my custom domain.
 
 ------------------------------------------------------------------------------------------------------------------------------------
